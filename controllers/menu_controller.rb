@@ -60,7 +60,6 @@ class MenuController
         
         system "clear"
         puts "End of entries"
-    
     end
     
     def create_entry
@@ -124,4 +123,5 @@ class MenuController
             view_entry_number_n
         end
     end
+    
 end
