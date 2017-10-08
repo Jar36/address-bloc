@@ -113,8 +113,8 @@ class MenuController
         print "What entry number would you like to view: "
         selection = gets.chomp.to_i
         
-        if selection < @address_book.entries.count
-            puts @address_book.entries[selection]
+        if (1..@address_book.entries.length).include?(selection)
+            puts @address_book.entries[selection - 1]
             puts "Hit enter key to go back to the main menu"
             gets.chomp
             system "clear"
