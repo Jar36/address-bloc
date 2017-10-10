@@ -59,7 +59,17 @@ class AddressBook
                 lower = mid + 1
             end
         end
-                    
+    end
     
+    # Iterative search for assignment CP-7
+    
+    def iterative_search(name)
+        @entries.each do |entry|
+            if entry.name == name
+                return entry
+            end
+        end
+        
+        return nil
     end
 end
