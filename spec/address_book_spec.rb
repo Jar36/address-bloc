@@ -10,6 +10,21 @@ require_relative '../models/address_book'
      expect(entry.phone_number).to eq expected_number
      expect(entry.email).to eq expected_email
    end
+   
+   # test for assignment #destroy 
+   
+   describe "#destroy" do
+    it "should delete all entries" do
+     book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+     book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+     book.add_entry('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com')
+     
+     book.destroy
+     
+     expect(book.entries.size).to eq 0
+    end
+   end
+     
   
    # #2
    
@@ -57,8 +72,11 @@ require_relative '../models/address_book'
            book.add_entry(name, phone_number, email)
            
            expect(book.entries.size).to eq(2)
+           
            book.remove_entry(name, phone_number, email)
-           expect(book.entries.size).to eq (1)
+           
+           expect(book.entries.size).to eq(1)
+           
            expect(book.entries.first.name).to eq("John Doe")
        end
    end
